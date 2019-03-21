@@ -55,7 +55,7 @@ class CommandManager(object):
 
         InitError: CommandManager on port was not initialised.
     """
-    def __init__(self, serialcommand_configs, devices_dict, init_timeout=DEFAULT_INIT_TIMEOUT, init_n_repeats=DEFAULT_INIT_N_REPEATS):
+    def __init__(self, serialcommand_configs, devices_dict=None, init_timeout=DEFAULT_INIT_TIMEOUT, init_n_repeats=DEFAULT_INIT_N_REPEATS):
         self.logger = create_logger(self.__class__.__name__)
 
         self.init_n_repeats = init_n_repeats
@@ -228,8 +228,8 @@ class CommandManager(object):
 
         """
         serialcommand_configs = config['ios']
-        devices = config['devices']
-        return cls(serialcommand_configs, devices)
+        # devices = config['devices']
+        return cls(serialcommand_configs)
 
     @classmethod
     def from_configfile(cls, configfile):

@@ -77,8 +77,8 @@ class CommandManager(object):
                 self.logger.warning('CommandManager on port "{port}" has not initialized'.format(port=cmdHdl._serial.port))
             self.serialcommandhandlers.append(cmdHdl)
 
-        self.register_all_devices(devices_dict)
-        self.set_devices_as_attributes()
+        # self.register_all_devices(devices_dict)
+        # self.set_devices_as_attributes()
 
     def set_devices_as_attributes(self):
         """
